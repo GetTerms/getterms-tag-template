@@ -355,7 +355,23 @@ ___WEB_PERMISSIONS___
         "publicId": "write_data_layer",
         "versionId": "1"
       },
-      "param": []
+      "param": [
+        {
+          "key": "keyPatterns",
+          "value": {
+            "type": 2,
+            "listItem": [
+              {
+                "type": 1,
+                "string": "developer_id.dMjlhZj"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "clientAnnotations": {
+      "isEditedByUser": true
     },
     "isRequired": true
   },
@@ -661,6 +677,6 @@ scenarios: []
 
 ___NOTES___
 
-Created on 06/02/2024, 15:59:28
+Created on 07/02/2024, 10:15:39
 
 
