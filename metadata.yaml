@@ -13,7 +13,7 @@
 # limitations under the License.
 
 homepage: "https://getterms.io"
-# documentation: "https://www.example.com/documentation"
+documentation: "https://support.getterms.io/article/38-google-tag-manager-template"
 versions:
   - sha: 5f02a788b90ae804f86b04aa24af8937e567874a
     changeNotes: Initial Version
