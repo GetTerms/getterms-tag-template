@@ -15,5 +15,7 @@
 homepage: "https://getterms.io"
 documentation: "https://support.getterms.io/article/38-google-tag-manager-template"
 versions:
+  - sha: b1d82db1a9c8db60731e299f644b0acf3aea7418
+    changeNotes: Fix Developer ID Permissions issue
   - sha: 8ec66882d15f1cb96d452758665947cb8746d678
     changeNotes: Initial Version
