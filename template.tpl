@@ -234,7 +234,7 @@ const main = (data) => {
     security_storage: data.security_storage,
   };
   // wait_for_update (ms) allows for time to receive visitor choices from the CMP
-  //defaultData.wait_for_update = 500;
+  defaultData.wait_for_update = 500;
   setDefaultConsentState(defaultData);
   log('GTM: defaultData: ', defaultData);
 
@@ -677,6 +677,6 @@ scenarios: []
 
 ___NOTES___
 
-Created on 07/02/2024, 10:15:39
+Created on 17/04/2024, 08:53:38
 
 
