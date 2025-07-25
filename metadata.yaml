@@ -13,7 +13,7 @@
 # limitations under the License.
 
 homepage: "https://getterms.io"
-documentation: "https://support.getterms.io/article/38-google-tag-manager-template"
+documentation: "https://support.getterms.io/article/42-how-to-set-up-google-consent-mode-with-get-terms"
 versions:
     # Current Version
   - sha: 193fb0bf22caa3cc9a3f6b25e87a7d5bc1562aff
