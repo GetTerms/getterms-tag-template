@@ -16,7 +16,8 @@ homepage: "https://getterms.io"
 documentation: "https://support.getterms.io/article/42-how-to-set-up-google-consent-mode-with-get-terms"
 versions:
     # Current Version
-
+  - sha: 74f3f478d701550680a8c199e8115ef32c19267a
+    changeNotes: Added new fields and management for widget installation and language options via tag manager
     # Old versions, newest first
   - sha: be01e686c5985f7e595b8b720c1924b4ddcb62d6
     changeNotes: Updated documentation link
