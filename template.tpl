@@ -1,10 +1,18 @@
-﻿___INFO___
+﻿___TERMS_OF_SERVICE___
+
+By creating or modifying this file you agree to Google Tag Manager's Community
+Template Gallery Developer Terms of Service available at
+https://developers.google.com/tag-manager/gallery-tos (or such other URL as
+Google may provide), as modified from time to time.
+
+
+___INFO___
 
 {
 "type": "TAG",
 "id": "cvt_NGMP4",
 "version": 1,
-"displayName": "GetTerms CMP Staging",
+"displayName": "GetTerms Consent Mode Tag Template",
 "categories": [
 "TAG_MANAGEMENT",
 "UTILITY"
@@ -26,13 +34,33 @@ ___TEMPLATE_PARAMETERS___
 
 [
 {
+"type": "GROUP",
+"name": "Optional Settings",
+"displayName": "Optional Settings",
+"groupStyle": "ZIPPY_CLOSED",
+"subParams": [
+{
+"type": "GROUP",
+"name": "GTM widget installation",
+"displayName": "Widget installation via GTM (not recommended)",
+"groupStyle": "ZIPPY_CLOSED",
+"subParams": [
+{
+"type": "TEXT",
+"name": "widgetSlug",
+"displayName": "GetTerms ID",
+"simpleValueType": true,
+"valueHint": "e.g. 12abc345-d6ef-7891-g2h3-45ijk6lm78n",
+"help": "Embeds the Consent Banner via GTM.  This will impact script blocking reliability - Only use this method if you do not have access to your website’s \u003chead\u003e."
+},
+{
 "type": "SELECT",
 "name": "defaultLanguage",
 "displayName": "Default Widget Language",
 "macrosInSelect": false,
 "selectItems": [
 {
-"value": "en-uk",
+"value": "en-us",
 "displayValue": "English US"
 },
 {
@@ -60,7 +88,8 @@ ___TEMPLATE_PARAMETERS___
 "displayValue": "Hindi"
 }
 ],
-"simpleValueType": true
+"simpleValueType": true,
+"defaultValue": "en-us"
 },
 {
 "type": "CHECKBOX",
@@ -68,25 +97,13 @@ ___TEMPLATE_PARAMETERS___
 "checkboxText": "Enable auto-language detection",
 "simpleValueType": true,
 "help": "If enabled, GetTerms CMP widget will attempt to match the users preferred language to one of our available options."
-},
-{
-"type": "GROUP",
-"name": "Optional Settings",
-"displayName": "Optional Settings",
-"groupStyle": "ZIPPY_CLOSED",
-"subParams": [
-{
-"type": "TEXT",
-"name": "widgetSlug",
-"displayName": "Install banner via GTM (Optional)",
-"simpleValueType": true,
-"valueHint": "GetTerms ID",
-"help": "Embeds the Consent Banner via GTM.\n\nThis will impact script blocking reliability - Only use this method if you do not have access to your website’s \u003chead\u003e."
+}
+]
 },
 {
 "type": "GROUP",
 "name": "Fallback Default Consent State",
-"displayName": "Fallback Default Consent State",
+"displayName": "Fallback default consent state",
 "groupStyle": "NO_ZIPPY",
 "subParams": [
 {
@@ -249,7 +266,6 @@ const lang = data.defaultLanguage || 'en-us';
 const widgetSlug = data.widgetSlug || null;
 
 // Fetch current embed type for widget. If the widget has been embedded manually in &lt;head&gt; by the user prior to GTM script, this should be "ManualEmbed", else null
-
   const embedType = localStorage.getItem('getterms_init') || null;
 
 
@@ -347,7 +363,7 @@ const widgetSlug = data.widgetSlug || null;
 
   // Check if preferences have already been set by the widget
   const getTermsCookiePrefs = localStorageGetItem("cookie_preferences");
-  log("[Tag Manager] Locally stored preferences found:", getTermsCookiePrefs);
+  log("[Tag Manager] getTermsCookiePrefs =", getTermsCookiePrefs);
 
   // If user has already given consent, apply it if the widget has not already been loaded
   if ((!embedType || embedType === 'GTMTemplate') && getTermsCookiePrefs) {
