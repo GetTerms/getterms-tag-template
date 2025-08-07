@@ -11,7 +11,7 @@ ___INFO___
 {
 "type": "TAG",
 "id": "cvt_NGMP4",
-"version": 1,
+"version": 1.1,
 "displayName": "GetTerms Consent Mode Tag Template",
 "categories": [
 "TAG_MANAGEMENT",
