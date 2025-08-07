@@ -248,7 +248,8 @@ const autoLang = data.autoLang || false;
 const lang = data.defaultLanguage || 'en-us';
 const widgetSlug = data.widgetSlug || null;
 
-// Fetch current embed type for widget. If the widget has been embedded manually in <head> by the user prior to GTM script, this should be "ManualEmbed", else null
+// Fetch current embed type for widget. If the widget has been embedded manually in &lt;head&gt; by the user prior to GTM script, this should be "ManualEmbed", else null
+
   const embedType = localStorage.getItem('getterms_init') || null;
 
 
