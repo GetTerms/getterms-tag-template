@@ -16,9 +16,11 @@ homepage: "https://getterms.io"
 documentation: "https://support.getterms.io/article/42-how-to-set-up-google-consent-mode-with-get-terms"
 versions:
     # Current Version
+  - sha: 822a7ecae3e5855865474d968aacdf3b66dcddc7
+    changeNotes: Resolved url links for resources
+    # Old versions, newest first
   - sha: 03a1832352c1236bd3617a5a98ee1c0f8872374d
     changeNotes: Added Terms of Service back in for template and added version increment
-    # Old versions, newest first
   - sha: 40d173340380467b2ec01348425ee32bf1ce3eaf
     changeNotes: Escaped head in comment with html entities
   - sha: 74f3f478d701550680a8c199e8115ef32c19267a
