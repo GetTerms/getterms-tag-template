@@ -271,7 +271,7 @@ const widgetSlug = data.widgetSlug || null;
 
   // Construct the embed script URL for the GetTerms cookie widget
   // We only set url if we have a slug and there is no current embed prior to tag loading
-  const url = data.widgetSlug && (!embedType || embedType === 'GTMTemplate') ? 'https://app-staging.getterms.io/cookie-consent/embed/' + widgetSlug + '/' + lang + (autoLang ? '?auto=true' : '')
+  const url = data.widgetSlug && (!embedType || embedType === 'GTMTemplate') ? 'https://app.getterms.io/cookie-consent/embed/' + widgetSlug + '/' + lang + (autoLang ? '?auto=true' : '')
   : null;
 
   // Key used to store user cookie preferences in localStorage
@@ -832,7 +832,7 @@ const widgetSlug = data.widgetSlug || null;
   "listItem": [
   {
   "type": 1,
-  "string": "https://app-staging.getterms.io/*"
+  "string": "https://app.getterms.io/*"
   }
   ]
   }
