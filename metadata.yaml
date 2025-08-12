@@ -16,8 +16,8 @@ homepage: "https://getterms.io"
 documentation: "https://support.getterms.io/article/42-how-to-set-up-google-consent-mode-with-get-terms"
 versions:
     # Current Version
-  - sha: 5f775ba11e5ef901cdfb8c6d48b7439a68df01c5
-    changeNotes: Resolved branding and copyright issues
+  - sha: 4289e2ded791424043d328afc34c5bc599bd31d9
+    changeNotes: Resolved branding and copyright issues and updated ReadMe
     # Old versions, newest first
   - sha: d1aa8d39caf5179960cbd38428caf4f74a8385fe
     changeNotes: Added indentation for tpl
