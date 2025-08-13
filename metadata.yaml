@@ -16,14 +16,13 @@ homepage: "https://getterms.io"
 documentation: "https://support.getterms.io/article/42-how-to-set-up-google-consent-mode-with-get-terms"
 versions:
     # Current Version
-  - sha: a41a27fdbf4ccec9f1c2b4c98635faf83b8e1f5c
+  - sha: c8f4fe19261d584596daf999c4618b6ad64707cb
     changeNotes: Version increment for GTM template review resubmission
     # Previous versions, newest first
   - sha: 8195f9a4338866f7bf21f48e4fd858a7a916e9f4
     changeNotes: Updated metadata and resolved template review issues
   - sha: 4289e2ded791424043d328afc34c5bc599bd31d9
     changeNotes: Resolved branding and copyright issues and updated ReadMe
-    # Old versions, newest first
   - sha: d1aa8d39caf5179960cbd38428caf4f74a8385fe
     changeNotes: Added indentation for tpl
   - sha: 822a7ecae3e5855865474d968aacdf3b66dcddc7
