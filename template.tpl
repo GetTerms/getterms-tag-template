@@ -18,7 +18,7 @@ ___INFO___
     "UTILITY"
   ],
   "brand": {
-    "id": "github.com_getterms",
+    "id": "github.com_humaan",
     "displayName": "GetTerms",
     "thumbnail": "data:image/png;b...(12949 characters truncated, it's impossible to view or edit this line)
   },
