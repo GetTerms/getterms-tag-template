@@ -2334,7 +2334,7 @@ ___WEB_PERMISSIONS___
             "listItem": [
               {
                 "type": 1,
-                "string": "https://app.getterms.io/*"
+                "string": "https://gettermscmp.com/*"
               }
             ]
           }
