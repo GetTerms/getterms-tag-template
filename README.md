@@ -12,6 +12,8 @@ This template allows users to integrate Google Consent Mode with their GetTerms 
 - **Widget Installation**: Optional installation of the GetTerms consent widget directly through GTM (not recommended for optimal performance)
 - **Multi-language Support**: Configure widget language with auto-detection capabilities
 - **Fallback Consent States**: Set default consent values that apply before user interaction
+- **Regional Defaults (GDPR/EEA)**: Set a single default consent configuration that applies automatically to all GDPR countries (EU + EEA)
+- **Country-specific Overrides**: Define per‑country default consent configurations that take precedence over regional defaults
 - **Real-time Consent Updates**: Automatically updates Google consent signals when users change their preferences
 - **localStorage Integration**: Reads and respects existing user consent preferences
 - **Developer ID Registration**: Includes GetTerms developer ID for consent mode debugging
@@ -90,6 +92,38 @@ These settings serve as global fallback defaults if the GetTerms consent banner 
 - **personalization_storage**: Controls personalization cookies (default: denied)
 - **security_storage**: Controls essential cookies (default: granted)
 
+#### Regional Default Consent (GDPR/EEA)
+
+Enable a single default consent configuration that applies to users located in GDPR countries (EU + EEA). This is useful when you want to enforce a stricter default for the entire region.
+
+- Toggle: "Set default consent behavior for GDPR region"
+- For each consent type, choose the default you want applied across GDPR countries
+- If not explicitly set, the template's GDPR defaults are:
+  - ad_storage: denied
+  - ad_user_data: denied
+  - ad_personalization: denied
+  - analytics_storage: denied
+  - functionality_storage: granted
+  - personalization_storage: denied
+  - security_storage: granted
+
+Notes:
+- GDPR defaults are applied automatically when enabled.
+- If you also define per‑country overrides, those take precedence for the specified countries and will be excluded from the regional rollout.
+
+#### Country-specific Default Consent Overrides
+
+Define default consent configurations for individual countries. Use this when a specific country requires a different default than your GDPR regional setting or global fallback.
+
+- Toggle: "Country specific default consent state settings"
+- Click "New Country Override" to add an entry
+- Select the target country and choose default values for each consent type
+
+Requirements and behavior:
+- Country overrides take precedence over GDPR regional defaults
+- Country overrides are applied when the template controls the GetTerms widget (i.e., when using the widget installation via GTM) and the country override feature is enabled
+- If both GDPR defaults and country overrides are enabled, the template will apply the country override to the specified country and the GDPR default to the rest of the GDPR countries
+
 ## Usage
 
 ### Recommended Implementation
@@ -110,7 +144,8 @@ These settings serve as global fallback defaults if the GetTerms consent banner 
 2. **Widget Detection**: Checks if the GetTerms widget is already installed
 3. **Consent Reading**: Reads existing user consent preferences from localStorage
 4. **Consent Mapping**: Translates GetTerms categories to Google consent mode signals
-5. **Real-time Updates**: Listens for consent changes and updates Google services accordingly
+5. **Regional/Country Defaults**: If enabled, applies GDPR regional defaults and any defined country overrides before the banner displays to the user
+6. **Real-time Updates**: Listens for consent changes and updates Google services accordingly
 
 ### Integration with Other Tags
 
