@@ -16,9 +16,11 @@ homepage: "https://getterms.io"
 documentation: "https://support.getterms.io/article/42-how-to-set-up-google-consent-mode-with-get-terms"
 versions:
     # Current Version
+  - sha: 7bf56b85b9b3234d4e87eed1c548be51b09292f3
+    changeNotes: Update for embed URL to use CMP specific domain
+    # Previous versions, newest first
   - sha: b8da473ccaf6fabd644d0d95247b05a9b72bec5b
     changeNotes: Added ability to override regional consent defaults via template
-    # Previous versions, newest first
   - sha: 5c6520ea6535a175cc4667e74e45755cbf7107df
     changeNotes: Resolve branding and thumbnail and indentation
   - sha: be01e686c5985f7e595b8b720c1924b4ddcb62d6
