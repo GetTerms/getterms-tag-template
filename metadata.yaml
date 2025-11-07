@@ -16,9 +16,11 @@ homepage: "https://getterms.io"
 documentation: "https://support.getterms.io/article/42-how-to-set-up-google-consent-mode-with-get-terms"
 versions:
     # Current Version
+  - sha: b8da473ccaf6fabd644d0d95247b05a9b72bec5b
+    changeNotes: Added ability to override regional consent defaults via template
+    # Previous versions, newest first
   - sha: 5c6520ea6535a175cc4667e74e45755cbf7107df
     changeNotes: Resolve branding and thumbnail and indentation
-    # Previous versions, newest first
   - sha: be01e686c5985f7e595b8b720c1924b4ddcb62d6
     changeNotes: Updated documentation link
   - sha: 193fb0bf22caa3cc9a3f6b25e87a7d5bc1562aff
