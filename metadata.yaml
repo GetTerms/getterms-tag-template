@@ -16,9 +16,11 @@ homepage: "https://getterms.io"
 documentation: "https://support.getterms.io/article/42-how-to-set-up-google-consent-mode-with-get-terms"
 versions:
     # Current Version
+  - sha: 997c1f20cfcf7ca1afcdbd968271b8c8bd0cf789
+    changeNotes: Update widget installation to use the new blocker + widget embed scripts
+    # Previous versions, newest first
   - sha: 7bf56b85b9b3234d4e87eed1c548be51b09292f3
     changeNotes: Update for embed URL to use CMP specific domain
-    # Previous versions, newest first
   - sha: b8da473ccaf6fabd644d0d95247b05a9b72bec5b
     changeNotes: Added ability to override regional consent defaults via template
   - sha: 5c6520ea6535a175cc4667e74e45755cbf7107df
