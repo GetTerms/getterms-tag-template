@@ -136,7 +136,7 @@ Requirements and behavior:
 2. **GTM Widget Installation** (Alternative):
    - Use the template's widget installation feature
    - Configure your GetTerms ID and language preferences
-   - The template will inject the widget script and handle consent mode
+   - The template injects the GetTerms blocker script first, then the widget script (the same two-script installation used in the manual header embed), and handles consent mode
 
 ### How It Works
 

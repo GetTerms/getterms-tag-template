@@ -11,7 +11,7 @@ ___INFO___
 {
   "type": "TAG",
   "id": "cvt_NGMP4",
-  "version": 1.2,
+  "version": 1.3,
   "displayName": "GetTerms CMP",
   "categories": [
     "TAG_MANAGEMENT",
@@ -1812,18 +1812,32 @@ function main() {
     localStorage.setItem('gtm_region_override', gtmControlBannerConfig);
   }
 
-  // Inject widget script if allowed
-  const url = widgetSlug && (!embedType || embedType === 'GTMTemplate' || gtmInstallsWidget) ? 'https://gettermscmp.com/cookie-consent/embed/' + widgetSlug + '/' + lang + (autoLang ? '?auto=true' : '') : null;
+  // Inject widget scripts if allowed
+  const shouldInject = widgetSlug && (!embedType || embedType === 'GTMTemplate' || gtmInstallsWidget);
 
-  if (url && queryPermission('inject_script', url)) {
-    log('[Tag Manager] Injecting GetTerms script via GTM template');
+  // The new installation method loads two scripts: a blocker (which must run first
+  // to block cookie scripts) followed by the widget (which renders the consent banner).
+  const langPath = lang + (autoLang ? '?auto=true' : '');
+  const blockerUrl = shouldInject ? 'https://gettermscmp.com/cookie-consent/blocker/' + widgetSlug + '/' + langPath : null;
+  const widgetUrl = shouldInject ? 'https://gettermscmp.com/cookie-consent/widget/' + widgetSlug + '/' + langPath : null;
+
+  if (shouldInject && queryPermission('inject_script', blockerUrl) && queryPermission('inject_script', widgetUrl)) {
+    log('[Tag Manager] Injecting GetTerms scripts via GTM template');
     localStorage.setItem('getterms_init', 'GTMTemplate');
 
-    injectScript(url, () => {
-      log('[Tag Manager] GetTerms script loaded successfully.');
-      data.gtmOnSuccess();
+    // Load the blocker first; once it has loaded, inject the widget so ordering is preserved.
+    injectScript(blockerUrl, () => {
+      log('[Tag Manager] GetTerms blocker loaded successfully.');
+
+      injectScript(widgetUrl, () => {
+        log('[Tag Manager] GetTerms widget loaded successfully.');
+        data.gtmOnSuccess();
+      }, () => {
+        log('[Tag Manager] GetTerms widget failed to load.');
+        data.gtmOnFailure();
+      });
     }, () => {
-      log('[Tag Manager] GetTerms script failed to load.');
+      log('[Tag Manager] GetTerms blocker failed to load.');
       data.gtmOnFailure();
     });
   } else {
